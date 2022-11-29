@@ -1,0 +1,20 @@
+[Unit]
+Description=gogimage
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+Restart=on-failure
+StartLimitInterval=360
+StartLimitBurst=5
+
+; User and group the process will run as.
+User=caddy
+Group=caddy
+WorkingDirectory=/var/www/og-img.ld83.com
+
+ExecStart=/var/www/og-img.ld83.com/gogimage
+ExecReload=/bin/kill -USR1 $MAINPID
+
+[Install]
+WantedBy=multi-user.target

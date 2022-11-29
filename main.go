@@ -81,7 +81,7 @@ func generateOGIm(title, footer string) (b bytes.Buffer, err error) {
 	textRightMargin := 60.0
 	maxWidth := float64(ggCtx.Width()) - textRightMargin - textRightMargin
 	x := textRightMargin
-	y := float64(ggCtx.Height()) - 73
+	y := float64(ggCtx.Height()) - 75
 	ggCtx.DrawStringWrapped(footer, x, y, 0, 0, maxWidth, 1.5, gg.AlignLeft)
 
 	// titre

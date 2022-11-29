@@ -7,5 +7,5 @@ run:
 dev: build run
 
 deploy: build
-	scp -pR dist/* root@dpp.st:/var/www/og-img.ld83.org/
+	rsync -arvz dist/* root@dpp.st:/var/www/og-img.ld83.com/
 	ssh root@dpp.st systemctl restart ogimg
